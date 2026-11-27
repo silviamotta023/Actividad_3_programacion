@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda Laura</title>
+    <link rel="stylesheet" href="./estilos.css" />
+  </head>
+  <body>
+    <header class="encabezado">
+      <div class="encabezado-contenido">
+        <h1>Tienda Laura</h1>
+        <div class="sesion">
+          <span id="sesion-info">Sin sesión</span>
+          <button id="btn-salir" class="boton boton-secundario boton-pequeno oculto" type="button">
+            Salir
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <section id="panel-login" class="tarjeta tarjeta-login">
+        <h2>Iniciar sesión</h2>
+        <p class="subtitulo">Ingresa para administrar los productos.</p>
+
+        <form id="form-login" class="formulario">
+          <label>
+            Email
+            <input id="login-email" type="email" placeholder="tu@email.com" autocomplete="username" required />
+          </label>
+          <label>
+            Contraseña
+            <input id="login-password" type="password" placeholder="Tu contraseña" autocomplete="current-password" required />
+          </label>
+          <button class="boton boton-ancho" type="submit">Entrar</button>
+        </form>
+
+        <p id="login-mensaje" class="mensaje" role="status"></p>
+      </section>
+
+      <section class="tarjeta">
+        <div class="tarjeta-cabecera">
+          <div>
+            <h2>Productos</h2>
+            <p class="subtitulo">Consulta, edita o elimina los productos.</p>
+          </div>
+          <div class="acciones">
+            <button id="btn-recargar" class="boton boton-secundario" type="button">Recargar</button>
+            <button id="btn-agregar" class="boton" type="button">Agregar producto</button>
+          </div>
+        </div>
+
+        <p id="tabla-mensaje" class="mensaje" role="status"></p>
+
+        <div class="tabla-contenedor">
+          <table class="tabla">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th class="numero">Precio</th>
+                <th class="numero">Stock</th>
+                <th class="col-acciones">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="cuerpo-productos">
+              <tr><td colspan="5" class="vacio">Cargando productos...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="panel-formulario" class="tarjeta oculto">
+        <h2 id="titulo-formulario">Agregar producto</h2>
+        <p class="subtitulo">Completa los datos del producto.</p>
+
+        <form id="form-producto" class="formulario formulario-producto">
+          <label>
+            Nombre
+            <input id="producto-nombre" type="text" placeholder="Nombre del producto" required />
+          </label>
+          <label>
+            Precio
+            <input id="producto-precio" type="number" min="0" step="0.01" placeholder="0.00" required />
+          </label>
+          <label>
+            Stock
+            <input id="producto-stock" type="number" min="0" step="1" value="0" required />
+          </label>
+
+          <div class="acciones-formulario">
+            <button id="btn-guardar" class="boton" type="submit">Guardar producto</button>
+            <button id="btn-cancelar" class="boton boton-secundario" type="button">Cancelar</button>
+          </div>
+        </form>
+
+        <p id="producto-mensaje" class="mensaje" role="status"></p>
+      </section>
+    </main>
+
+    <footer class="pie">Tienda Laura · API de productos con JWT</footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

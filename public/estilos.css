@@ -1,0 +1,240 @@
+:root {
+  --fondo: #f4f6fb;
+  --blanco: #ffffff;
+  --texto: #1f2937;
+  --suave: #6b7280;
+  --borde: #e5e7eb;
+  --azul: #4f46e5;
+  --azul-oscuro: #4338ca;
+  --azul-claro: #eef2ff;
+  --rojo: #dc2626;
+  --rojo-claro: #fef2f2;
+  --verde: #16a34a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+}
+
+button, input { font: inherit; }
+
+/* ===== Encabezado ===== */
+.encabezado {
+  background: var(--blanco);
+  border-bottom: 1px solid var(--borde);
+}
+
+.encabezado-contenido {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.encabezado h1 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--azul);
+}
+
+.sesion { display: flex; align-items: center; gap: 12px; }
+
+.sesion-texto, #sesion-info {
+  font-size: 0.9rem;
+  color: var(--suave);
+}
+
+/* ===== Contenido ===== */
+.contenedor {
+  flex: 1;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  display: grid;
+  gap: 22px;
+  align-content: start;
+}
+
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(31, 41, 55, 0.06);
+}
+
+.tarjeta h2 { margin: 0; font-size: 1.2rem; }
+
+.subtitulo {
+  margin: 4px 0 0;
+  color: var(--suave);
+  font-size: 0.9rem;
+}
+
+.tarjeta-login {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.tarjeta-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ===== Formularios ===== */
+.formulario { display: grid; gap: 16px; margin-top: 20px; }
+
+.formulario label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.formulario input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--texto);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.formulario input:focus {
+  outline: none;
+  border-color: var(--azul);
+  box-shadow: 0 0 0 3px var(--azul-claro);
+}
+
+.formulario-producto { grid-template-columns: repeat(3, 1fr); }
+
+.acciones-formulario {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ===== Botones ===== */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid var(--azul);
+  border-radius: 8px;
+  background: var(--azul);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.boton:hover { background: var(--azul-oscuro); }
+.boton:active { transform: scale(0.98); }
+
+.boton-secundario {
+  background: #fff;
+  color: var(--azul);
+  border-color: var(--borde);
+}
+
+.boton-secundario:hover { background: var(--azul-claro); }
+
+.boton.peligro {
+  background: var(--rojo-claro);
+  color: var(--rojo);
+  border-color: #fecaca;
+}
+
+.boton.peligro:hover { background: #fee2e2; }
+
+.boton-pequeno { padding: 6px 12px; font-size: 0.82rem; }
+.boton-ancho { width: 100%; }
+
+.acciones { display: flex; gap: 8px; flex-wrap: wrap; }
+.texto-suave { color: var(--suave); font-size: 0.85rem; }
+
+/* ===== Tabla ===== */
+.tabla-contenedor {
+  margin-top: 14px;
+  overflow-x: auto;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+}
+
+.tabla {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+}
+
+.tabla th, .tabla td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--borde);
+}
+
+.tabla th {
+  background: #f9fafb;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--suave);
+}
+
+.tabla tbody tr:hover { background: #f9fafb; }
+.tabla tbody tr:last-child td { border-bottom: none; }
+
+.tabla .numero, .tabla th.numero { text-align: right; }
+.tabla .col-acciones, .tabla th.col-acciones { text-align: right; width: 190px; }
+.tabla td.col-acciones .acciones { justify-content: flex-end; }
+
+.vacio {
+  text-align: center !important;
+  color: var(--suave);
+  padding: 30px 10px !important;
+}
+
+/* ===== Mensajes ===== */
+.mensaje {
+  min-height: 1.1rem;
+  margin: 12px 0 0;
+  font-size: 0.88rem;
+  color: var(--suave);
+}
+
+.mensaje.error { color: var(--rojo); }
+.mensaje.ok { color: var(--verde); }
+
+.oculto { display: none !important; }
+
+.pie {
+  text-align: center;
+  padding: 20px;
+  color: var(--suave);
+  font-size: 0.8rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .formulario-producto { grid-template-columns: 1fr; }
+  .tarjeta { padding: 18px; }
+}
