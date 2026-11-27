@@ -1,17 +1,16 @@
 :root {
-  --fondo: #f4f6fb;
+  --fondo: #f7f5fc;
   --blanco: #ffffff;
   --texto: #1f2937;
   --suave: #6b7280;
   --borde: #e5e7eb;
-  --azul: #4f46e5;
-  --azul-oscuro: #4338ca;
-  --azul-claro: #eef2ff;
+  --azul: #8b5cf6;
+  --azul-oscuro: #7c3aed;
+  --azul-claro: #f3effe;
   --rojo: #dc2626;
   --rojo-claro: #fef2f2;
   --verde: #16a34a;
 }
-
 * { box-sizing: border-box; }
 
 body {
