@@ -4,5 +4,5 @@ export const db = mysql.createPool({
   host: "localhost",
   user: "root",
   password: process.env.DB_PASSWORD,
-  database: "tienda",
+  database: "tienda_productos",
 });
