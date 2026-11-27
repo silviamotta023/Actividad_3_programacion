@@ -1,7 +1,7 @@
 {
-  "name": "actividad_6_api_web",
+  "name": "Actividad_3_programacion",
   "version": "1.0.0",
-  "description": "Actividad 6 - API de productos con JWT y front-end",
+  "description": "Actividad 3 - Programación",
   "main": "src/server.js",
   "scripts": {
     "start": "node --env-file=.env src/server.js",
